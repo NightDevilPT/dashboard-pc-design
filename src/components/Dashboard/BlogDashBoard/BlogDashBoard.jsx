@@ -23,7 +23,11 @@ const length = blogData.desc.split("\n")?.length;
 function BlogDashBoard() {
 	return (
 		<div className={`blog-dashboard`}>
+
+			{/* ---[ Inner Width ( 1200+ ) ]--- */}
 			<div className={`blog-inner-width`}>
+
+				{/* ---[ Left Side Blog ( Blog full Info ) ]--- */}
 				<div className={`left`}>
 					<div className={`blog-title-div`}>
 						{`Unlocking Success: Proven Strategies to Boost Your Chance of Landing an Application Engineer Role.`}
@@ -38,6 +42,7 @@ function BlogDashBoard() {
 					</div>
 				</div>
 
+				{/* ---[ Right Side Blog ( Suggested or Recommended Blogs ) ]--- */}
 				<div className="right">
 					<div className="blog-div">
 						<div className={`blog-title-div`}>
@@ -57,6 +62,8 @@ function BlogDashBoard() {
 					<div className="title-div">
 						<span>Recommended Subscription Plan</span>
 					</div>
+
+					{/* ---[ Coupend Card with Some Data Passing to Managing Color and Text ]--- */}
 					<CoupenCard
 						data={{
 							intro: `Hey Pawan Kumar, we would like to Recommend you a Plan

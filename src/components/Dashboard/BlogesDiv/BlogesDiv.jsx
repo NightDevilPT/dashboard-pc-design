@@ -12,9 +12,7 @@ function BlogesDiv() {
 				<div className={`blog-title`}>
 					{`Unlocking Success: Proven Strategies to Boost Your Chance of Landing an Application Engineer Role.`}
 				</div>
-                <div className="blog-day-info">
-                    {`4 days ago`}
-                </div>
+				<div className="blog-day-info">{`4 days ago`}</div>
 			</div>
 		</div>
 	);

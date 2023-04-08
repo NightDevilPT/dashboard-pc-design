@@ -11,9 +11,13 @@ import CoupenCard from "../CoupenCard/CoupenCard";
 function ExploreJobs() {
 	return (
 		<div className={`explore-dashboard`}>
+
+			{/* ---[ Inner Width ( 1200+ ) ]--- */}
 			<div className={`inner-width`}>
 				<div className={`dashboard-title`}>Dashboard</div>
 				<div className={`explore-dashboard-div`}>
+
+					{/* ---[ Left Side for Explore Job Div ]--- */}
 					<div className={`left-div`}>
 						<div className={`title-div`}>
 							<span>Explore Jobs</span>
@@ -42,11 +46,13 @@ function ExploreJobs() {
 						</div>
 					</div>
 
+					{/* ---[ Right Side for Explore ( Coupen Card and Blogs Recommendation) ]--- */}
 					<div className={`right-div`}>
 						<div className={`title-div`}>
 							<span>Recommended Subscription Plan</span>
 						</div>
 
+						{/* ---[ Coupend Card with Some Data Passing to Managing Color and Text ]--- */}
 						<CoupenCard
 							data={{
 								intro: `Hey Pawan Kumar, we would like to Recommend you a Plan
@@ -68,6 +74,7 @@ function ExploreJobs() {
 							</div>
 						</div>
 					</div>
+					
 				</div>
 			</div>
 		</div>
