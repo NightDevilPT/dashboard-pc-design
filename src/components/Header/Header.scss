@@ -1,0 +1,214 @@
+@use "../../mixins.scss" as mixin;
+
+header{
+	@include mixin.width-height($h: 60px);
+    @include mixin.flex($jc: center, $g: 20px);
+	border-bottom: 2px solid var(--divider-color);
+	box-shadow: 0px 0px 15px var(--divider-color);
+
+	.header-inner-width {
+		@include mixin.width-height($w: var(--max-width), $h: 100%);
+        @include mixin.flex($jc: space-between);
+
+		.title-div {
+			@include mixin.width-height($h: 100%, $w: 150px);
+			@include mixin.flex($jc: center, $d: column);
+
+			h2 {
+				position: absolute;
+				bottom: 15px;
+				left:0;
+				color: var(--highlight);
+				font-family: var(--family);
+				font-size: 34px;
+			}
+			span {
+				position: absolute;
+				left: 0px;
+				font-family: var(--family);
+				font-size: 11px;
+				bottom: 10px;
+				color: var(--disable-color);
+			}
+		}
+
+		.search-div {
+			@include mixin.width-height($w: 250px, $h: 30px);
+			@include mixin.flex();
+			margin-right: 20px;
+			padding: 3px;
+			padding-left: 15px;
+			padding-right: 15px;
+			border: 1px solid var(--disable-color);
+			border-radius: 10px;
+
+			.search-text {
+				position: relative;
+				top: 1px;
+				border: none;
+				outline: none;
+				font-family: var(--family);
+				color: var(--disable-color);
+				font-size: 14px;
+				flex: 1;
+			}
+
+			.search-icon {
+				@include mixin.width-height($w: 25px, $h: 25px);
+				color: var(--disable-color);
+			}
+		}
+
+		.menubar-div {
+			@include mixin.width-height($w: auto, $h: 40px);
+			@include mixin.flex($jc: flex-start, $g: 15px);
+			margin-left: 20px;
+			.menubar-btn {
+				@include mixin.flex($g: 10px);
+				color: var(--disable-color);
+				cursor: pointer;
+
+				.menubar-icons {
+					@include mixin.width-height($w: 23px, $h: 23px);
+				}
+				span {
+					font-family: var(--family);
+					font-size: 18px;
+					white-space: nowrap;
+				}
+			}
+
+			.active-menubar-btn {
+				color: var(--highlight);
+			}
+		}
+
+		.divider {
+			@include mixin.width-height($w: 2px, $h: 60%);
+			background-color: var(--divider-color);
+		}
+
+		.notification-div {
+			@include mixin.width-height($w: auto, $h: 40px);
+			@include mixin.flex($g: 15px);
+			// background-color: red;
+
+			.message-notification-div {
+				@include mixin.width-height($w: auto);
+				cursor: pointer;
+
+				.notification-icon {
+					@include mixin.width-height($w: 25px, $h: 25px);
+					color: var(--color);
+				}
+				.show-notification {
+					@include mixin.width-height($w: 7px, $h: 7px, $p: absolute);
+					background-color: var(--error);
+					top: 3px;
+					right: 3px;
+					background-color: var(--error-color);
+					border-radius: 50%;
+				}
+			}
+		}
+
+		.user-div {
+			@include mixin.width-height($w: auto, $h: 40px);
+			@include mixin.flex($g: 0px);
+			cursor: pointer;
+
+			.user-img-div {
+				@include mixin.width-height($w: auto, $h: auto);
+				@include mixin.flex($g: 5px);
+
+				img {
+					width: 30px;
+					height: 30px;
+					border-radius: 50%;
+				}
+
+				span {
+					// width: 70px;
+					// white-space: nowrap;
+					// overflow: hidden;
+					// text-overflow: ellipsis;
+					font-family: var(--family);
+					color: var(--color);
+					font-size: 16px;
+				}
+			}
+
+			.user-arrow-down-icon {
+				@include mixin.width-height($w: 25px, $h: 25px);
+			}
+		}
+
+        .user-menu-div{
+            @include mixin.width-height($w:200px,$h:auto,$p:absolute);
+            @include mixin.flex($d:column,$g:5px);
+            top: 12vh;
+            right: 0;
+            z-index: 1;
+            padding: 10px;
+            border-radius: 10px;
+			background-color: var(--primary-color);
+            border: 2px solid var(--divider-color);
+            box-shadow: 0px 0px 15px var(--divider-color);
+			visibility: visible;
+			opacity: 1;
+			transition: .2s all ease-in-out;
+
+            .profile-complition-div{
+                @include mixin.width-height($w:100%,$h:auto);
+                @include mixin.flex($d:column,$g:5px);
+                color: var(--highlight);
+                font-family: var(--family);
+                text-transform: capitalize;
+                cursor: default;
+
+                span{
+                    font-size: 11px;
+                    color: var(--color);
+                }
+
+                .subscription-btn{
+                    width: 90%;
+                    height: auto;
+                    padding: 5px;
+                    padding-left: 10px;
+                    padding-right:10px ;
+                    background-color: var(--warn-color);
+                    font-size: 10px;
+                    border-radius: 20px;
+                    text-align: center;
+                    color: black;
+                    cursor: pointer;
+                }
+            }
+
+            .user-menu-btn{
+                @include mixin.width-height($w:90%,$h:auto);
+                @include mixin.flex($jc:flex-start,$g:10px);
+                padding: 5px;
+                cursor: pointer;
+
+                .user-menu-btn-icon{
+                    @include mixin.width-height($w:22px,$h:22px);
+                }
+                span{
+                    color: var(--color);
+                    font-family: var(--family);
+                    text-transform: capitalize;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .hide-user-menu-div{
+            top: 15vh;
+			visibility: hidden;
+			opacity: 0;
+			transition: .2s all ease-in-out;
+        }
+	}
+}

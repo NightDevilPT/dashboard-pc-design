@@ -1,0 +1,79 @@
+@use "../../../mixins.scss" as mixin;
+
+.carousel-div{
+    @include mixin.width-height($w:90%,$h:250px);
+    @include mixin.flex($d:column,$jc:flex-start,$g:5px);
+    
+    .carousel-title{
+        @include mixin.width-height($h:40px);
+        @include mixin.flex();
+        color: var(--color);
+        font-family: var(--family);
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .carousel-wrapper{
+        @include mixin.width-height($h:auto,$w:90%);
+        @include mixin.flex($jc:flex-start);
+        border-radius: 15px;
+        border: 1px solid var(--warn-color);
+        background-color: var(--carousel-color);
+        overflow-x:hidden;
+        scroll-behavior: smooth;
+        
+        &::-webkit-scrollbar{
+            -webkit-appearance: none;
+            height: 0;
+        }
+
+        .carousel-frame{
+            @include mixin.width-height($w:100%,$h:auto);
+            min-width: 100%;
+            @include mixin.flex($d:column,$jc:flex-start,$g:10px);
+            padding-bottom: 5px;
+
+            img{
+                @include mixin.width-height($w:50%);
+                object-fit: cover;
+            }
+
+            .title{
+                @include mixin.width-height($w:95%);
+                text-align: center;
+                font-size: 15px;
+                font-family: var(--family);
+                color: var(--color);
+                text-transform: capitalize;
+            }
+            .subtitle{
+                @include mixin.width-height($w:95%);
+                text-align: center;
+                font-size: 12px;
+                font-family: var(--family);
+                color: var(--disable-color);
+                text-transform: capitalize;
+            }
+            
+        }
+    }
+
+    .carousel-indicator{
+        @include mixin.width-height($w:90%,$h:20px);
+        @include mixin.flex($g:5px);
+
+        span{
+            transition: .2s all ease-in-out;
+        }
+
+        .active{
+            @include mixin.width-height($w:10px,$h:10px);
+            border-radius: 50%;
+            background-color: var(--warn-color);
+        }
+        .unactive{
+            @include mixin.width-height($w:10px,$h:10px);
+            border-radius: 50%;
+            background-color: var(--disable-color);
+        }
+    }
+}

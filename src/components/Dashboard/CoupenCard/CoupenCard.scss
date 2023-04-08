@@ -1,0 +1,110 @@
+@use "../../../mixins.scss" as mixin;
+
+.coupen-div {
+	@include mixin.width-height($h: auto);
+	@include mixin.flex($d: column, $g: 10px);
+
+	.coupen-intro {
+		@include mixin.width-height();
+		color: var(--disable-color);
+		font-size: 14px;
+		font-family: var(--family);
+	}
+
+	.active-radio-btn{
+		@include mixin.width-height($w:25px,$h:25px,$p:absolute);
+		left: 10px;
+		border: 1px solid var(--highlight);
+		color: var(--highlight);
+	}
+
+	.coupen-card {
+		@include mixin.width-height($h: 100px);
+		@include mixin.flex($d: column, $g: 5px);
+		border-radius: 10px;
+		border: 1px solid var(--highlight);
+
+		.recommend-text {
+			@include mixin.width-height($w: 20px, $h: 100%, $p: absolute);
+			@include mixin.flex();
+			left: 0;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			background-color: var(--highlight);
+			color: var(--primary-color);
+			text-align: center;
+			font-family: var(--family);
+			font-size: 13px;
+			writing-mode: vertical-lr;
+			transform: rotateZ(180deg);
+		}
+
+		.coupen-details {
+			@include mixin.width-height(
+				$w: calc(100% - 40px),
+				$h: 100%,
+				$p: absolute
+			);
+			@include mixin.flex(
+				$d: column,
+				$jc: flex-start,
+				$g: 10px,
+				$ai: flex-start
+			);
+			left: 30px;
+			top: 12px;
+
+			.coupen-title {
+				font-size: 14px;
+				font-family: var(--family);
+				color: var(--color);
+				font-size: 16px;
+				font-weight: bold;
+			}
+
+			.coupen-info {
+				@include mixin.flex($jc: flex-start, $g: 10px);
+				font-family: var(--family);
+
+				span {
+					&:nth-child(1) {
+						color: var(--highlight);
+					}
+					&:nth-child(2) {
+						color: var(--disable-color);
+					}
+				}
+
+				button {
+					border: none;
+					outline: none;
+					border-radius: 10px;
+					padding: 3px;
+					padding-left: 8px;
+					padding-right: 8px;
+					color: var(--primary-color);
+					background-color: var(--highlight);
+					cursor: pointer;
+				}
+			}
+
+			.coupen-info2 {
+				@include mixin.width-height($h: 20px);
+				overflow: hidden;
+				color: var(--highlight);
+				font-family: var(--family);
+				font-size: 12px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+
+		img {
+			@include mixin.width-height($w: 45px, $h: 45px, $p: absolute);
+			top: 12px;
+			right: 15px;
+			border-radius: 8px;
+		}
+	}
+}

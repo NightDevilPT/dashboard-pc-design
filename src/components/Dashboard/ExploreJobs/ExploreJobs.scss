@@ -1,0 +1,47 @@
+@use "../../../mixins.scss" as mixin;
+
+.explore-dashboard {
+	@include mixin.width-height($h: auto);
+	@include mixin.flex($d: column, $jc: flex-start);
+	min-height: auto;
+
+	.explore-dashboard-div {
+		@include mixin.width-height($h: auto);
+		@include mixin.flex($jc: space-between, $ai: flex-start);
+
+		.left-div {
+			@include mixin.width-height($w: 65%);
+			min-height: auto;
+
+			.explore-job-div {
+				@include mixin.width-height($h: 420px);
+				@include mixin.flex($d: column, $jc: flex-start);
+				overflow-y: auto;
+				margin-top: 10px;
+				border-radius: 10px;
+				border: 1px solid var(--disable-color);
+
+				@include mixin.ScrollStyle($w:5px,$mt:5px,$mb:5px);
+			}
+		}
+
+		.right-div {
+			@include mixin.width-height($w: 32%, $h: auto);
+			@include mixin.flex($jc: flex-start, $d: column);
+			min-height: auto;
+            .blog-div{
+                margin-top: 10px;
+                @include mixin.width-height($h:300px);
+				overflow: hidden;
+                @include mixin.flex($d:column,$jc:flex-start,$g:5px);
+
+                .blogs-div{
+                    @include mixin.width-height($h:300px,$w:calc(100% - 10px));
+                    @include mixin.flex($d:column,$g:20px,$jc:flex-start);
+                    margin-top: 5px;
+                    border-radius: 10px;
+                }
+            }
+		}
+	}
+}

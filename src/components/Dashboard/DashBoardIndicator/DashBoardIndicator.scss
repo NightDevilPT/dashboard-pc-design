@@ -1,0 +1,28 @@
+@use "../../../mixins.scss" as mixin;
+
+.dashboard-indicator-div {
+	@include mixin.width-height($h: auto);
+	@include mixin.flex($jc: flex-start);
+    margin-left: -10px;
+	// background-color: red;
+    font-family: var(--family);
+    color: var(--disable-color);
+
+	span {
+		max-width: 150px;
+		height: auto;
+		position: relative;
+        font-size: 13px;
+
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+        margin-left: 5px;
+        margin-right: 5px;
+
+        &:last-child{
+            color: var(--color);
+        }
+	}
+}

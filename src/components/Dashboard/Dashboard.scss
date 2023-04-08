@@ -1,0 +1,80 @@
+@use "../../mixins.scss" as mixin;
+
+.dashboard-div{
+    @include mixin.width-height($h:calc(100vh - 100px));
+    @include mixin.flex($d:column,$jc:flex-start);
+    background-color: var(--primary-color);
+    overflow-y:auto;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar{
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track{
+        background-color: var(--divider-color);
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: var(--highlight);
+        border-radius: 10px;
+    }
+    
+    .inner-width{
+        @include mixin.width-height($h:auto,$w:var(--max-width));
+        @include mixin.flex($d:column,$jc:flex-start);
+
+        .dashboard-title{
+            @include mixin.width-height($w:var(--max-width),$h:50px);
+            @include mixin.flex($jc:flex-start);
+            font-family: var(--family);
+            font-size: 25px;
+            color: var(--color);
+            font-weight: bold;
+        }
+        
+    }
+
+
+    .title-div{
+        @include mixin.width-height($h:40px);
+        @include mixin.flex($jc:space-between);
+
+        span{
+            font-size: 17px;
+            font-weight: bold;
+            font-family: var(--family);
+            cursor: default;
+        }
+
+        button{
+            border: none;
+            outline: none;
+            font-family: var(--family);
+            color: var(--disable-color);
+            font-size: 17px;
+            cursor: pointer;
+        }
+    }
+
+    .selection-div{
+        @include mixin.width-height($h:25px);
+        @include mixin.flex($g:15px,$jc:flex-start);
+
+        .select-div{
+            border: 1px solid var(--disable-color);
+            background-color: var(--divider-color);
+            border-radius: 3px;
+
+            select{
+                @include mixin.flex();
+                padding: 2px;
+                font-size: 11px;
+                border-radius: 3px;
+                font-family: var(--family);
+                outline: none;
+                border: none;
+                background-color: transparent;
+            }
+        }
+    }
+}

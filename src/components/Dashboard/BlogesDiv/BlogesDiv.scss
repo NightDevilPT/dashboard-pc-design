@@ -1,0 +1,39 @@
+@use "../../../mixins.scss" as mixin;
+
+.blogger-data-div {
+	@include mixin.width-height($h: 70px, $w: calc(100% - 4px));
+	@include mixin.flex($jc: space-between, $g: 5px, $ai: flex-start);
+	border-radius: 10px;
+	border: 1px solid var(--disable-color);
+	padding: 2px;
+    box-shadow: 0px 0px 10px var(--disa-color);
+	background-color: var(--primary-color);
+
+	img {
+		@include mixin.width-height($h: 100%, $w: auto);
+		object-fit: contain;
+		border-radius: 8px;
+	}
+
+	.blog-data {
+		flex: 1;
+		height: 100%;
+		@include mixin.flex($d: column, $ai: flex-start,$g:5px);
+
+		.blog-title {
+            @include mixin.width-height();
+			color: var(--color);
+			font-family: var(--family);
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+		}
+
+        .blog-day-info{
+            color: var(--disable-color);
+            font-family: var(--family);
+            font-size: 13px;
+        }
+	}
+}

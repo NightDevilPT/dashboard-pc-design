@@ -1,0 +1,279 @@
+@use "../../../mixins.scss" as mixin;
+
+.project-dashboard {
+	@include mixin.width-height($h: auto);
+	@include mixin.flex();
+	margin-bottom: 10px;
+
+	.project-indicate-div {
+		@include mixin.width-height($h: 50px);
+		@include mixin.flex($jc: flex-start);
+	}
+
+	.bottom-div {
+		@include mixin.width-height();
+		display: grid;
+		gap: 2px;
+		grid-template-columns: 400px calc(100% - 400px);
+		border: 1px solid var(--disable-color);
+		background-color: var(--disable-color);
+		border-radius: 15px;
+		overflow: hidden;
+
+		.left {
+			@include mixin.width-height($w: 100%, $h: auto);
+			min-height: auto;
+			@include mixin.flex($d: column, $jc: center, $g: 50px);
+			background-color: var(--primary-color);
+			padding-bottom: 15px;
+			padding-top: 15px;
+
+			.project-coupen-div {
+				@include mixin.width-height($w: 90%);
+			}
+
+			.subscription-btn {
+				@include mixin.width-height($w: 90%, $h: 45px);
+				border-radius: 10px;
+				@include mixin.flex();
+
+				color: var(--primary-color);
+				background-color: var(--button-color);
+				outline: none;
+				border: none;
+				font-size: 22px;
+				font-family: var(--family);
+			}
+		}
+
+		.right {
+			@include mixin.width-height($w: calc(100% - 15px), $h: 530px);
+			min-height: 530px;
+			background-color: var(--primary-color);
+			overflow-y: auto;
+			overflow-x: hidden;
+			padding-left: 15px;
+
+			@include mixin.ScrollStyle($w:6px,$mt:10px,$mb:10px);
+
+			.title-div {
+				span {
+					color: var(--highlight);
+					font-size: 20px;
+				}
+			}
+
+			.job-details-div {
+				@include mixin.width-height($h: auto, $w: calc(100% - 20px));
+				@include mixin.flex($jc: space-between);
+
+				.job-logo-title-div {
+					@include mixin.width-height($h: auto, $w: auto);
+					@include mixin.flex($jc: space-between, $g: 10px);
+
+					.company-logo {
+						@include mixin.width-height($w: 45px, $h: 45px);
+						padding: 2px;
+						background-color: var(--divider-color);
+						border-radius: 5px;
+					}
+
+					.title-div {
+						@include mixin.width-height($w: auto);
+						@include mixin.flex(
+							$d: column,
+							$g: 10px,
+							$ai: flex-start
+						);
+
+						span {
+							font-family: var(--family);
+
+							&:first-child {
+								color: var(--color);
+								font-size: 16px;
+							}
+							&:last-child {
+								color: var(--disable-color);
+								font-size: 14px;
+							}
+						}
+					}
+				}
+
+				.share-icon {
+					@include mixin.width-height($w: 30px, $h: 30px);
+				}
+			}
+
+			.job-frame1 {
+				@include mixin.width-height($h: auto,$w:calc(100% - 20px));
+				@include mixin.flex($jc: flex-start, $g: 5px, $ai: flex-start);
+				flex-wrap: wrap;
+				margin-top: 5px;
+				border-bottom: 1px solid var(--disable-color);
+				padding-bottom: 5px;
+
+				.job-info-div {
+					@include mixin.width-height($w: auto, $h: auto);
+					@include mixin.flex($g: 8px);
+					margin-right: 15px;
+					padding-bottom: 5px;
+
+					.job-info-icon {
+						@include mixin.width-height($w: 22px, $h: 22px);
+						color: var(--color);
+					}
+
+					span {
+						color: var(--disable-color);
+						font-family: var(--family);
+						font-size: 15px;
+					}
+					.alert-color {
+						color: var(--error-color);
+					}
+				}
+
+				.job-type2 {
+					@include mixin.width-height(
+						$w: calc(100% - 30px),
+						$h: 30px
+					);
+					@include mixin.flex($jc: flex-start, $g: 20px);
+
+					.job-info-div2 {
+						@include mixin.flex($g: 10px);
+						@include mixin.width-height($w: auto);
+						color: var(--disable-color);
+						span {
+							font-family: var(--family);
+							font-size: 15px;
+							
+							&:last-child {
+								color: var(--highlight);
+							}
+						}
+					}
+				}
+				.subtitle-div {
+					@include mixin.width-height($h: 30px);
+					@include mixin.flex($jc: flex-start);
+					font-family: var(--family);
+					font-size: 14px;
+					color: var(--color);
+					// background-color: red;
+					font-weight: bold;
+				}
+			}
+            
+            .skill-education-div{
+                @include mixin.width-height($w:calc(100% - 20px),$h:auto);
+                @include mixin.flex($d:column,$ai:flex-start,$g:5px);
+				margin-top: 10px;
+				padding-bottom: 10px;
+				border-bottom: 1px solid var(--disable-color);
+
+                .frames{
+                    font-family: var(--family);
+                    font-size: 15px;
+                    color: var(--disable-color);
+
+                    .black{
+                        color: var(--color);
+                    }
+                    .highlight{
+                        color: var(--highlight);
+                    }
+                }
+            }
+
+			.tags-frame{
+				@include mixin.width-height($w:calc(100% - 20px),$h:auto);
+				@include mixin.flex($d:column,$ai:flex-start,$g:10px);
+				margin-top: 10px;
+				padding-bottom: 10px;
+				border-bottom: 1px solid var(--disable-color);
+
+				.frames{
+					@include mixin.width-height();
+					@include mixin.flex($g:10px,$jc:flex-start);
+
+					font-family: var(--family);
+					font-size: 14px;
+
+					button{
+						color: var(--highlight);
+						padding: 1px;
+						padding-left: 5px;
+						padding-right: 5px;
+						border-radius: 10px;
+						border: none;
+						outline: none;
+						background-color: var(--hover-bg);
+						border: 1px solid var(--highlight);
+						@include mixin.flex($g:5px);
+
+						.tags-icons{
+							@include mixin.width-height($w:15px,$h:15px);
+						}
+						.green{
+							color: green;
+						}
+						.red{
+							color: red !important;
+						}
+					}
+				}
+			}
+
+
+			.about-company{
+				@include mixin.width-height($w:calc(100% - 20px),$h:150px);
+				@include mixin.flex($jc:space-between,$g:10px);
+				margin-top: 10px;
+
+				.video-div{
+					@include mixin.width-height($w:200px,$h:auto);
+					@include mixin.flex();
+
+					img{
+						@include mixin.width-height($w:200px);
+						object-fit: cover;
+						border-radius: 10px
+					}
+
+					.video-icon{
+						@include mixin.width-height($w:35px,$h:35px,$p:absolute);
+						color: white;
+					}
+				}
+
+				.about-div{
+					@include mixin.width-height($h:150px);
+					@include mixin.flex($d:column,$g:10px,$jc:flex-start);
+
+					.subtitle-div{
+						@include mixin.width-height();
+
+						span{
+							font-size: 16px;
+							font-family: var(--family);
+							color: var(--color);
+						}
+					}
+
+					.description-div{
+						@include mixin.width-height();
+
+						span{
+							font-size: 14px;
+							font-family: var(--family);
+							color: var(--disable-color);
+						}
+					}
+				}
+			}
+		}
+	}
+}

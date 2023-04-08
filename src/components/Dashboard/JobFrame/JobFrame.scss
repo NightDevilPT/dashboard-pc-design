@@ -1,0 +1,102 @@
+@use "../../../mixins.scss" as mixin;
+
+.explored-job-frame {
+	@include mixin.width-height($h: auto, $w: calc(100% - 20px));
+	@include mixin.flex($jc: space-between);
+	border-bottom: 1px solid var(--disable-color);
+	padding: 10px;
+
+	.frame1 {
+		@include mixin.width-height($w: auto, $h: 100%);
+		@include mixin.flex($g: 15px);
+
+		.img-frame {
+			@include mixin.width-height($w: 45px, $h: 45px);
+			border-radius: 5px;
+			margin-left: 5px;
+		}
+
+		.explore-job-text {
+			@include mixin.width-height($w: auto, $h: auto);
+			@include mixin.flex($d: column, $ai: flex-start);
+			font-family: var(--family);
+
+			.explore-title {
+				font-size: 18px;
+				color: var(--highlight);
+			}
+			.explore-subtitle {
+				margin-top: 5px;
+				font-size: 16px;
+				color: var(--disable-color);
+			}
+			.explore-subscription {
+				margin-top: 5px;
+				color: var(--warn-color);
+				font-size: 14px;
+			}
+
+			.explore-job-tags {
+                margin-top: 5px;
+				@include mixin.flex($g: 8px);
+
+				.tags {
+                    font-size: 12px;
+					padding: 1px;
+					padding-left: 5px;
+					padding-right: 5px;
+					border: 1px solid var(--highlight);
+					border-radius: 10px;
+					color: var(--highlight);
+					background-color: var(--hover-bg);
+				}
+			}
+		}
+	}
+
+
+    .explore-ctc-div{
+        @include mixin.flex($d:column,$g:10px,$ai:flex-end);
+
+        .work-type,.ctc-div{
+            @include mixin.flex($g:5px,$jc:flex-end);
+
+            .work-type-icon{
+                color: var(--disable-color);
+                @include mixin.width-height($w:25px,$h:25px);
+            }
+            .ctc-icon{
+                @include mixin.width-height($w:20px,$h:20px);
+                color: var(--disable-color)
+            }
+            span{
+                @include mixin.flex();
+                font-family: var(--family);
+                color: var(--disable-color);
+            }
+        }
+    }
+	&:hover  .explore-ctc-div{
+		display: none;
+	}
+
+
+	.view-detail{
+		@include mixin.width-height($p:absolute,$w:auto);
+		display: none;
+		right:10px;
+		padding: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+		border: 1px solid var(--highlight);
+		border-radius: 8px;
+		background-color: var(--hover-bg);
+		color: var(--highlight);
+		font-size: 14px;
+		font-family: var(--family);
+		cursor: pointer;
+	}
+	&:hover  .view-detail{
+		display: flex;
+	}
+}

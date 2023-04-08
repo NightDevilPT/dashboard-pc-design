@@ -1,0 +1,165 @@
+@use "../../../mixins.scss" as mixin;
+
+.home-dashboard{
+    @include mixin.width-height($h:auto);
+    @include mixin.flex($d:column,$jc:flex-start);
+    min-height: auto;
+
+    .inner-width{
+
+        .dashboard-status-div{
+            @include mixin.width-height($h:auto,$w:var(--max-width));
+            @include mixin.flex($jc:space-between);
+
+            .applied-job-div{
+                @include mixin.width-height($h:auto,$w:60%);
+                @include mixin.flex($jc:flex-start,$g:0px,$d:column);
+
+                .jobs-div{
+                    @include mixin.width-height($h:250px);
+                    border-radius: 15px;
+                    border: 1px solid var(--disable-color);
+                    overflow-y: auto;
+                    overflow-x: hidden;
+
+
+                    &::-webkit-scrollbar{
+                        width: 5px;
+                    }
+                    &::-webkit-scrollbar-track{
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        border-radius: 5px;
+                        margin-right: 2px;
+                        width: 5px;
+                        background-color: var(--divider-color);
+                    }
+                    &::-webkit-scrollbar-thumb{
+                        width: 5px;
+                        border-radius: 5px;
+                        background-color: var(--highlight);
+                    }
+                    
+                    .applied-jobs-frame{
+                        @include mixin.width-height($h:auto);
+                        @include mixin.flex($jc:space-between);
+                        padding: 10px;
+                        border-bottom: 1px solid var(--disable-color);
+
+                        .job-user-div{
+                            @include mixin.width-height($w:auto);
+                            @include mixin.flex($g:10px);
+                            cursor: default;
+
+                            img{
+                                @include mixin.width-height($w:65px,$h:65px);
+                                background-color: var(--divider-color);
+                                border-radius: 10px;
+                            }
+
+                            .job-user-data-div{
+                                @include mixin.width-height($w:auto,$h:100%);
+                                @include mixin.flex($d:column,$jc:flex-start,$ai:flex-start,$g:2px);
+
+                                .title{
+                                    font-family: var(--family);
+                                    font-size: 16px;
+                                    color: var(--color);
+                                }
+                                .subtitle{
+                                    font-family: var(--family);
+                                    font-size: 13px;
+                                    color: var(--disable-color);
+                                }
+                                button{
+                                    margin-top: 3px;
+                                    padding: 1px;
+                                    padding-left: 5px;
+                                    padding-right: 5px;
+                                    border: 1px solid var(--highlight);
+                                    border-radius: 10px;
+                                    color: var(--highlight);
+                                    background-color: var(--hover-bg);
+                                }
+                            }
+                        }
+
+                        .job-user-icon{
+                            @include mixin.width-height($w:25px,$h:25px);
+                            margin: 15px;
+                            color: var(--color);
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+            .application-status-div{
+                @include mixin.width-height($w:35%,$h:100%);
+                border-radius: 10px;
+
+                .status-div{
+                    @include mixin.width-height($w:100%,$h:250px);
+                    border-radius: 10px;
+                    border: 1px solid var(--disable-color);
+                    background-color: var(--disable-color);
+
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    gap: 1px;
+
+                    .status-frame{
+                        position: relative;
+                        background-color: var(--primary-color);
+                        padding: 10px;
+
+                        .status-icon{
+                            @include mixin.width-height($p:absolute,$w:32px,$h:32px);
+                            right: 15px;
+                            top: 10px;
+                            border-radius: 5px;
+                            background-color: var(--hover-bg);
+                            color: var(--color);
+                            padding: 8px;
+                        }
+
+                        .status-count{
+                            position: absolute;
+                            left: 15px;
+                            top: 15px;
+                            font-size: 33px;
+                            font-family: var(--family);
+                            color: var(--highlight);
+                            font-weight: bold;
+                        }
+
+                        .status-text{
+                            position: absolute;
+                            bottom: 15px;
+                            left: 15px;
+                            font-family: var(--family);
+                            color: var(--disable-color);
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .job-recommendation-div{
+            @include mixin.width-height($w:100%,$h:auto);
+            margin-top: 15px;
+
+            .title-div{
+                height: 35px;
+                border-bottom: 1px solid var(--disable-color);
+            }
+
+            .job-recommendation-frame{
+                @include mixin.width-height($h:200px);
+                @include mixin.flex($d:column,$jc:flex-start)
+            }
+        }
+    }
+}
